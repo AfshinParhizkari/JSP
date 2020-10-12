@@ -1,0 +1,25 @@
+CREATE TABLE `tbl_auth` (
+  `id` int(11) NOT NULL,
+  `usr` varchar(45) DEFAULT NULL,
+  `pws` varchar(45) DEFAULT NULL,
+  `locate` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+)
+
+CREATE TABLE `tbl_product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(45) NOT NULL,
+  `countryid_fk` int(11) NOT NULL,
+  `count` int(11) DEFAULT NULL,
+  `price` float DEFAULT NULL,
+  `createdate` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_tbl_product_1` (`countryid_fk`),
+  CONSTRAINT `fk_tbl_product_1` FOREIGN KEY (`countryid_fk`) REFERENCES `tbl_country` (`countryid`) ON DELETE NO ACTION ON UPDATE NO ACTION
+)
+
+CREATE TABLE `tbl_country` (
+  `countryid` int(11) NOT NULL AUTO_INCREMENT,
+  `countryname` varchar(45) DEFAULT NULL,
+  PRIMARY KEY (`countryid`)
+)
