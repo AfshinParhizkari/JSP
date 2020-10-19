@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Formatter;
+import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.annotation.WebServlet;
@@ -23,6 +24,7 @@ public class Contproduct extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     final static String tag="<td>%s</td>";
+    Daoproduct daoprd = new Daoproduct();
 
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
@@ -59,7 +61,6 @@ public class Contproduct extends HttpServlet {
                 try {
                     findallproduct(req, res, " where name like '%" + req.getParameter("findbyid")+"%'");
                 } catch (SQLException e) {
-                    // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
             } else {
@@ -67,14 +68,12 @@ public class Contproduct extends HttpServlet {
                     try {
                         findallproduct(req, res,"");
                     } catch (SQLException e) {
-                        // TODO Auto-generated catch block
                         e.printStackTrace();
                     }
                 }
             }
         }
         if (action.equals("update")) {
-            Daoproduct daoproduct =new Daoproduct();
             Product myproduct = new Product();
             myproduct.setId(Integer.parseInt(req.getParameter("id")));
             myproduct.setName(req.getParameter("proname"));
@@ -89,7 +88,7 @@ public class Contproduct extends HttpServlet {
             myproduct.setPrice(Float.parseFloat(req.getParameter("price")));
             myproduct.setCount(Integer.parseInt(req.getParameter("count")));
             
-            int reslt=daoproduct.updateproduct(myproduct);
+            int reslt=daoprd.updateproduct(myproduct);
             PrintWriter out;
             try {
                 out = res.getWriter();
@@ -117,16 +116,18 @@ public class Contproduct extends HttpServlet {
             res.sendRedirect("error.html");
             return;
         }
-        Daoproduct daoproduct =new Daoproduct();
         String action = req.getParameter("CRUD");
         if (action.equals("del")) {
-            int reslt=daoproduct.deleteproduct(req.getParameter("id"));
+            int reslt=daoprd.deleteproduct(req.getParameter("id"));
             req.setAttribute("rowaffected",reslt);
             req.getRequestDispatcher("/productdelete.jsp").forward(req,res);
         }
         if (action.equals("edit")) {
+            Countrydao countrydao = new Countrydao();
+            List<Country> countryList= countrydao.findcountry("");
+            req.setAttribute("countrys",countryList);
 
-            Product product=daoproduct.findbyid(req.getParameter("id"));
+            Product product=daoprd.findbyid(req.getParameter("id"));
             req.setAttribute("myproduct",product);
             req.getRequestDispatcher("/productedit.jsp").forward(req,res);
         }
@@ -148,7 +149,6 @@ public class Contproduct extends HttpServlet {
         myproduct.setPrice(Float.parseFloat(request.getParameter("price")));
         myproduct.setCount(Integer.parseInt(request.getParameter("count")));
 
-        Daoproduct daoprd = new Daoproduct();
         Integer reslt = daoprd.saveproduct(myproduct);
 
         PrintWriter out;
@@ -188,7 +188,6 @@ public class Contproduct extends HttpServlet {
     private void findallproduct(HttpServletRequest request, HttpServletResponse response, String whereclause) throws IOException, ServletException, SQLException
     {
         try {
-            Daoproduct daoprd = new Daoproduct();
             ResultSet rs= daoprd.findallproduct(whereclause);
             if(rs!=null)
             {

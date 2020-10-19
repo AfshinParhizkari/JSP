@@ -12,26 +12,14 @@ public class Daologin {
     {
     }
 
-    public static Connection getConnection(){
-        
-        Connection con=null;
-        try
-            {
-             Class.forName("com.mysql.jdbc.Driver");
-             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test01", "admin", "123456");
-            }
-        catch (Exception e){
-            System.out.println(e);
-        }
-        return con;
-    }
+    Connection2db conect =new Connection2db();
 
     public Userpas getusr(String strusr)
     {
         
         Userpas up=new Userpas();
         try{
-            Connection con= getConnection();
+            Connection con= conect.getConnection();
             PreparedStatement statement=con.prepareStatement("SELECT * FROM test01.tbl_auth WHERE usr=?");
             statement.setString(1,strusr);
             ResultSet rs = statement.executeQuery();

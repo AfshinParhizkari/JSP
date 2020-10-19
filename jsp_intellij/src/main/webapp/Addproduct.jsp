@@ -1,3 +1,4 @@
+<%@taglib prefix="afy" uri="http://Apec459.net" %>
 <html>
     <head><title style="text-align: center;">servlet_webapp_vscode_j2ee : from scratch servlet</title></head>
     <body>
@@ -6,8 +7,9 @@
         <label for="hname">Product name: </label>
         <input id="hname" name="proname" type="text"> <br><br>
 
-        <label for="hcountryname">countryname: </label>
-        <input id="hcountryname" name="countryname" type="text"> <br><br>
+        <!--label for="hcountryname">countryname: </label>
+        <input id="hcountryname" name="countryname" type="text"-->
+        countryname: <afy:select/><br><br>
 
         <label for="hcount">count: </label>
         <input id="hcount" name="count" type="number"> <br><br>
@@ -22,7 +24,5 @@
 
         <input type="submit" value="Add New Product">
     </form>
-
     </body>
-
 </html>

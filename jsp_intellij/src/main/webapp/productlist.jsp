@@ -11,7 +11,7 @@
     <title>diese sind meine producte</title>
 </head>
 <body>
-<a href='Addproduct.html'>Add new Product</a>
+<a href='Addproduct.jsp'>Add new Product</a>
 <form action='welcome' method='GET'>
     <input type='submit' value='logout'> <br></br>
 </form>

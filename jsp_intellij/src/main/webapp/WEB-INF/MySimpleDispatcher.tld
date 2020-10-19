@@ -25,4 +25,14 @@
             <type>java.lang.String</type>
         </attribute>
     </tag>
+    <tag>
+        <name>bodypresent</name>
+        <tag-class>com.afshin.Bodytaglib</tag-class>
+        <body-content>scriptless</body-content>
+    </tag>
+    <tag>
+        <name>select</name>
+        <tag-class>com.afshin.Selecttaglib</tag-class>
+        <body-content>empty</body-content>
+    </tag>
 </taglib>
