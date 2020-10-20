@@ -1,6 +1,6 @@
 <%@ page import="com.afshin.Product" %>
 <%@ page import="java.util.List" %>
-<%@ page import="com.afshin.Country" %><%--
+<%@ page import="com.afshin.Dropdownobject" %><%--
   Created by IntelliJ IDEA.
   User: afshin
   Date: 10/12/20
@@ -20,17 +20,17 @@
     Product name: <input name='proname' type='text' value="<%=pro.getName()%>"> <br><br>
     countryname : <select  name="countryname">
         <%
-            List<Country> countryList = (List<Country>) request.getAttribute("countrys");
-            for(Country tempcountry : countryList)
+            List<Dropdownobject> countryList = (List<Dropdownobject>) request.getAttribute("countrys");
+            for(Dropdownobject tempcountry : countryList)
             {
-                if(pro.getCountryid()==tempcountry.getCountryId())
+                if(pro.getCountryid()==tempcountry.getValue())
                 {
         %>
-        <option  selected=<%=tempcountry.getCountryName()%>  value=<%=tempcountry.getCountryId()%>><%=tempcountry.getCountryName()%></option>
+        <option  selected=<%=tempcountry.getLable()%>  value=<%=tempcountry.getValue()%>><%=tempcountry.getLable()%></option>
         <%     }
         else{
         %>
-        <option value=<%=tempcountry.getCountryId()%>><%=tempcountry.getCountryName()%></option>
+        <option value=<%=tempcountry.getValue()%>><%=tempcountry.getLable()%></option>
         <%}
         }
         %>

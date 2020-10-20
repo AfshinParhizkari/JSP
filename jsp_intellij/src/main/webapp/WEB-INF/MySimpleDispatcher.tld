@@ -34,5 +34,17 @@
         <name>select</name>
         <tag-class>com.afshin.Selecttaglib</tag-class>
         <body-content>empty</body-content>
+        <attribute>
+            <name>componentname</name>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>tablename</name>
+            <required>true</required>
+        </attribute>
+        <attribute>
+            <name>whereclause</name>
+            <required>false</required>
+        </attribute>
     </tag>
 </taglib>

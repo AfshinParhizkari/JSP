@@ -9,7 +9,7 @@
 
         <!--label for="hcountryname">countryname: </label>
         <input id="hcountryname" name="countryname" type="text"-->
-        countryname: <afy:select/><br><br>
+        countryname: <afy:select componentname="countryname" tablename="tbl_country"/><br><br>
 
         <label for="hcount">count: </label>
         <input id="hcount" name="count" type="number"> <br><br>

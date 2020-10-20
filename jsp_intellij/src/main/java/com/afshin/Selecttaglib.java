@@ -7,17 +7,47 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Selecttaglib extends Simpletaglib {
+    public Selecttaglib() {
+    }
+    String componentname;
+    String tablename;
+    String whereclause;
+
+    public String getComponentname() {
+        return componentname;
+    }
+
+    public void setComponentname(String componentname) {
+        this.componentname = componentname;
+    }
+
+    public String getTablename() {
+        return tablename;
+    }
+
+    public void setTablename(String tablename) {
+        this.tablename = tablename;
+    }
+
+    public String getWhereclause() {
+        return whereclause;
+    }
+
+    public void setWhereclause(String whereclause) {
+        this.whereclause = whereclause;
+    }
+
 
 
     @Override
     public void doTag() throws JspException, IOException {
-        List<Country> countryList = new ArrayList<>();
+        List<Dropdownobject> dropdownobjects = new ArrayList<>();
         JspWriter out = getJspContext().getOut();
-        Countrydao countrydao = new Countrydao();
-        out.println("<select name='countryname'>");
-        countryList = countrydao.findcountry("");
-        for (Country tempcountry : countryList) {
-            out.println("<option value ="+tempcountry.getCountryId()+">"+ tempcountry.getCountryName()+"</option >");
+        Dropdownobjectdao dropdownobjectdao = new Dropdownobjectdao();
+        out.println("<select name="+componentname+">");
+        dropdownobjects = dropdownobjectdao.finddropdown(tablename,whereclause);
+        for (Dropdownobject temp : dropdownobjects) {
+            out.println("<option value ="+temp.getValue()+">"+ temp.getLable()+"</option >");
         }
         out.println("</select>");
     }

@@ -2,17 +2,14 @@ package com.afshin;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Formatter;
 import java.util.List;
 import java.util.Locale;
 
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -123,9 +120,9 @@ public class Contproduct extends HttpServlet {
             req.getRequestDispatcher("/productdelete.jsp").forward(req,res);
         }
         if (action.equals("edit")) {
-            Countrydao countrydao = new Countrydao();
-            List<Country> countryList= countrydao.findcountry("");
-            req.setAttribute("countrys",countryList);
+            Dropdownobjectdao countrydao = new Dropdownobjectdao();
+            List<Dropdownobject> dropdownobjectList= countrydao.finddropdown("tbl_country","");
+            req.setAttribute("countrys",dropdownobjectList);
 
             Product product=daoprd.findbyid(req.getParameter("id"));
             req.setAttribute("myproduct",product);
