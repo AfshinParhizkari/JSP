@@ -47,4 +47,14 @@
             <required>false</required>
         </attribute>
     </tag>
+    <function>
+        <name>multiple</name>
+        <function-class>com.afshin.Tagfunction</function-class>
+        <function-signature>java.lang.Integer multiple(java.lang.Integer,java.lang.Integer)</function-signature>
+    </function>
+    <function>
+        <name>conver2persian</name>
+        <function-class>com.afshin.Tagfunction</function-class>
+        <function-signature>java.lang.String convert2persian(java.util.Date)</function-signature>
+    </function>
 </taglib>
