@@ -13,6 +13,7 @@
 <html>
 <head>
     <title>diese sind meine producte</title>
+    <afy:header appname="Car Product"/>
 </head>
 <body>
 <a href='Addproduct.jsp'>Add new Product</a>

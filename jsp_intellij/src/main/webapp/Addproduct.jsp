@@ -1,6 +1,10 @@
 <%@taglib prefix="afy" uri="http://Apec459.net" %>
+
 <html>
-    <head><title style="text-align: center;">servlet_webapp_vscode_j2ee : from scratch servlet</title></head>
+    <head>
+        <title style="text-align: center;">servlet_webapp_vscode_j2ee : from scratch servlet</title>
+        <afy:header appname="Car Product"/>
+    </head>
     <body>
         <form action="products" method="POST">
             <br>
