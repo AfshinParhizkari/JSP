@@ -1,14 +1,21 @@
 package com.afshin;
 
 public class Userpas {
-    public void Userpas()
-    {
-    }
-    
+
     int id;
     String usr;
     String pws;
     String locate;
+
+    public Userpas() {
+    }
+
+    public Userpas(int id, String usr, String pws, String locate) {
+        this.id = id;
+        this.usr = usr;
+        this.pws = pws;
+        this.locate = locate;
+    }
 
     public int getId() {
         return this.id;

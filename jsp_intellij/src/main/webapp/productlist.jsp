@@ -29,7 +29,7 @@
     <label></label>
 </form>
 
-<table>
+<table  border="1" width="90%">
     <tr>
         <td>id</td>
         <td>name</td>

@@ -177,7 +177,6 @@ public class Contproduct extends HttpServlet {
             out.write("</body>");
             out.write("</html>");
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
