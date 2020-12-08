@@ -1,4 +1,4 @@
-package com.afshin;
+package com.afshin.lib;
 
 import com.ibm.icu.text.SimpleDateFormat;
 import java.util.Date;

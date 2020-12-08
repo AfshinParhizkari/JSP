@@ -1,10 +1,10 @@
-package com.afshin;
+package com.afshin.lib;
 
 import javax.servlet.jsp.JspException;
 import java.io.IOException;
 import java.io.StringWriter;
 
-public class Bodytaglib extends Simpletaglib{
+public class Bodytaglib extends Simpletaglib {
 
     StringWriter sw = new StringWriter();
     @Override

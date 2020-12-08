@@ -23,6 +23,6 @@ operation result is :
 <%} else {%>
     Error!
 <%}%>
-<br><a href='Listproduct.html'>return</a>
+<br><a href='FirstPage.html'>return</a>
 </body>
 </html>

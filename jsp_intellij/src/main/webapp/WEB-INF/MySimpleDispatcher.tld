@@ -12,7 +12,7 @@
     <!-- Invoke 'Generate' action to add tags or functions -->
     <tag>
         <name>concatination</name>
-        <tag-class>com.afshin.Simpletaglib</tag-class>
+        <tag-class>com.afshin.lib.Simpletaglib</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>str1</name>
@@ -27,12 +27,12 @@
     </tag>
     <tag>
         <name>bodypresent</name>
-        <tag-class>com.afshin.Bodytaglib</tag-class>
+        <tag-class>com.afshin.lib.Bodytaglib</tag-class>
         <body-content>scriptless</body-content>
     </tag>
     <tag>
         <name>select</name>
-        <tag-class>com.afshin.Selecttaglib</tag-class>
+        <tag-class>com.afshin.lib.Selecttaglib</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>componentname</name>
@@ -53,12 +53,12 @@
     </tag-file>
     <function>
         <name>multiple</name>
-        <function-class>com.afshin.Tagfunction</function-class>
+        <function-class>com.afshin.lib.Tagfunction</function-class>
         <function-signature>java.lang.Integer multiple(java.lang.Integer,java.lang.Integer)</function-signature>
     </function>
     <function>
         <name>conver2persian</name>
-        <function-class>com.afshin.Tagfunction</function-class>
+        <function-class>com.afshin.lib.Tagfunction</function-class>
         <function-signature>java.lang.String convert2persian(java.util.Date)</function-signature>
     </function>
 </taglib>

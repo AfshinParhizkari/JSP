@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 import com.mysql.cj.jdbc.Driver;
 import com.mysql.cj.protocol.Resultset;
 
-public class Daoproduct {
+public class ProductDao {
 
     public void Daoproduct()
     {

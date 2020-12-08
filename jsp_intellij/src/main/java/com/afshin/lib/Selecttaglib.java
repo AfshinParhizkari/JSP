@@ -1,4 +1,7 @@
-package com.afshin;
+package com.afshin.lib;
+
+import com.afshin.Dropdownobject;
+import com.afshin.Dropdownobjectdao;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;

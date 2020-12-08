@@ -13,7 +13,7 @@ public class Connection2db {
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/test01", "admin", "123456");
+            con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tempschema", "admin", "123456");
         }
         catch (Exception e){System.out.println(e);}
         return con;

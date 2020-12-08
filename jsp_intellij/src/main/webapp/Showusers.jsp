@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="com.afshin.Userpas" %>
+<%@ page import="com.afshin.User" %>
 <%@ page import="com.afshin.Userdao" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="afy" uri="http://Apec459.net" %>
@@ -19,7 +19,7 @@
 <body>
 <%
     Userdao userdao=new Userdao();
-    List<Userpas> users = userdao.findall();
+    List<User> users = userdao.findall();
     request.setAttribute("userlist",users);
 %>
 <table border="1" width="90%">

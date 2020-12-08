@@ -17,11 +17,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.ServletException;
 
 @WebServlet(name = "products", urlPatterns = { "/products" })
-public class Contproduct extends HttpServlet {
+public class ProductCon extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     final static String tag="<td>%s</td>";
-    Daoproduct daoprd = new Daoproduct();
+    ProductDao daoprd = new ProductDao();
 
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 
@@ -40,8 +40,8 @@ public class Contproduct extends HttpServlet {
          */
 
         System.out.println("********Start check session**********");
-        Userpas userpas = (Userpas) req.getSession(true).getAttribute("myappsessionsecdata");
-        if (userpas == null) {
+        User user = (User) req.getSession(true).getAttribute("myappsessionsecdata");
+        if (user == null) {
             res.sendRedirect("error.html");
             return;
         }
@@ -97,7 +97,7 @@ public class Contproduct extends HttpServlet {
                     out.write("Success!");
                 else
                     out.write("Error!");
-                out.write("<br><a href='Listproduct.html'>return</a>");
+                out.write("<br><a href='FirstPage.html'>return</a>");
                 out.write("</body>");
                 out.write("</html>");
             } catch (IOException e) {
@@ -108,8 +108,8 @@ public class Contproduct extends HttpServlet {
     }
 
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-        Userpas userpas = (Userpas) req.getSession(true).getAttribute("myappsessionsecdata");
-        if (userpas == null) {
+        User user = (User) req.getSession(true).getAttribute("myappsessionsecdata");
+        if (user == null) {
             res.sendRedirect("error.html");
             return;
         }
@@ -160,7 +160,7 @@ public class Contproduct extends HttpServlet {
             else
                 out.write("Error!");
 
-            out.write("<br><a href='Listproduct.html'>return</a>");
+            out.write("<br><a href='FirstPage.html'>return</a>");
             // Simple code: just a simple response
             // out.write("<br>Product name: ");
             // out.write(request.getParameter("proname"));

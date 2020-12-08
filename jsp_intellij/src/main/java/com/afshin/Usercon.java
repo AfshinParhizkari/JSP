@@ -19,14 +19,14 @@ import javax.servlet.http.HttpSession;
 public class Usercon extends HttpServlet
 {
     private static final long serialVersionUID = 2L;
-    protected static Map<String,Userpas> usrmap =new ConcurrentHashMap<>();
+    protected static Map<String, User> usrmap =new ConcurrentHashMap<>();
     
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
     {
        
         //rd.forward(request, response);
         Userdao dl=new Userdao();
-        Userpas welcomeuser = new Userpas();
+        User welcomeuser = new User();
         String action=request.getParameter("distinct");
         if(action.equals("log")) {
 
@@ -52,7 +52,7 @@ public class Usercon extends HttpServlet
                 HttpSession session = request.getSession(true);
                 session.setAttribute("myappsessionsecdata", welcomeuser);
 
-                response.sendRedirect("Listproduct.html");
+                response.sendRedirect("FirstPage.html");
             } else {
                 response.sendRedirect("error.html");
             }
@@ -72,7 +72,7 @@ public class Usercon extends HttpServlet
                     out.write("Success!");
                 else
                     out.write("Error!");
-                out.write("<br><a href='Listproduct.html'>return</a>");
+                out.write("<br><a href='FirstPage.html'>return</a>");
                 out.write("</body>");
                 out.write("</html>");
             } catch (IOException e) {

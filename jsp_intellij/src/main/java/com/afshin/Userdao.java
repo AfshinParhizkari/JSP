@@ -15,13 +15,13 @@ public class Userdao {
 
     private Connection2db conect =new Connection2db();
 
-    public Userpas getusr(String strusr)
+    public User getusr(String strusr)
     {
         
-        Userpas up=new Userpas();
+        User up=new User();
         try{
             Connection con= conect.getConnection();
-            PreparedStatement statement=con.prepareStatement("SELECT * FROM test01.tbl_auth WHERE usr=?");
+            PreparedStatement statement=con.prepareStatement("SELECT * FROM tbl_auth WHERE usr=?");
             statement.setString(1,strusr);
             ResultSet rs = statement.executeQuery();
             if(rs.next()) {
@@ -41,7 +41,7 @@ public class Userdao {
         return up;
     }
 
-    public int adduser(Userpas usr){
+    public int adduser(User usr){
         Integer status=0;
         try{
             Connection con= conect.getConnection();
@@ -57,15 +57,15 @@ public class Userdao {
         return status;
     }
 
-    public List<Userpas> findall() {
-        List<Userpas> users =new ArrayList<>();
+    public List<User> findall() {
+        List<User> users =new ArrayList<>();
         try{
             Connection con= conect.getConnection();
             PreparedStatement statement=con.prepareStatement("select * from tbl_auth ");
             ResultSet rs = statement.executeQuery();
             while(rs.next())
             {
-                users.add(new Userpas(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4)));
+                users.add(new User(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4)));
             }
         }catch(Exception ex){ex.printStackTrace();}
         return users;

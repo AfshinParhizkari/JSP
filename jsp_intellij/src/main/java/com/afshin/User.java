@@ -1,16 +1,16 @@
 package com.afshin;
 
-public class Userpas {
+public class User {
 
     int id;
     String usr;
     String pws;
     String locate;
 
-    public Userpas() {
+    public User() {
     }
 
-    public Userpas(int id, String usr, String pws, String locate) {
+    public User(int id, String usr, String pws, String locate) {
         this.id = id;
         this.usr = usr;
         this.pws = pws;

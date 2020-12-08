@@ -1,4 +1,4 @@
-package com.afshin;
+package com.afshin.lib;
 
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
